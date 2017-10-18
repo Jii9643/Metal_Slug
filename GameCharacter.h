@@ -1,5 +1,5 @@
 //
-// Created by gigli on 16/10/2017.
+// Created by federico on 11/10/2017.
 //
 
 #ifndef METAL_SLUG_GAMECHARACTER_H
@@ -10,10 +10,10 @@
 
 class GameCharacter {
 public:
-    GameCharacter (float x, float y, int h ): PosX(x), PosY(y), Hp(h) {};
+    GameCharacter (float x, float y, int h, Weapon* w = nullptr): PosX(x), PosY(y),  Hp(h) {};
     virtual ~GameCharacter();
 
-    virtual void move (int x, int y) = 0;
+    virtual void move (int x, int y);
     virtual void hold ()=0;
     virtual void drop ()=0;
     virtual void draw ()=0;
@@ -47,6 +47,7 @@ protected:
     int Hp;
     float PosX;
     float PosY;
+    Weapon* weapon;
 };
 
 
